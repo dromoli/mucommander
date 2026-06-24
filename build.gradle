@@ -430,6 +430,7 @@ task macAppImage(dependsOn: 'createBundlesDir', type: Exec) {
                 '--runtime-image', 'jre/macOS/'+project.ext.arch, \
                 '--java-options', '\
                          -Dsun.java2d.d3d=false -Dsun.java2d.noddraw=false -Dsun.java2d.metal=false \
+                         -Dswing.metalTheme=steel \
                          -Dapple.awt.enableTemplateImages=true \
                          -Xshare:auto -XX:-UsePerfData -XX:+TieredCompilation -XX:TieredStopAtLevel=1 \
                         --add-exports java.desktop/com.apple.laf=ALL-UNNAMED \
@@ -717,6 +718,7 @@ macAppBundle {
     javaProperties.put("sun.java2d.d3d", "false")
     javaProperties.put("sun.java2d.noddraw", "false")
     javaProperties.put("sun.java2d.metal", "false") // see: https://github.com/mucommander/mucommander/issues/1372
+    javaProperties.put("swing.metalTheme", "steel")
     javaProperties.put("apple.awt.enableTemplateImages", "true")
     javaProperties.put("-Xshare:auto", null)
     javaProperties.put("-XX:-UsePerfData", null)

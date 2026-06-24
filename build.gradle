@@ -158,6 +158,8 @@ runOsgi {
     javaArgs += ' -Dsun.java2d.metal=false' // (use -Dsun.java2d.metal=true to debug)
     javaArgs += ' -Xshare:auto -XX:-UsePerfData -XX:+TieredCompilation -XX:TieredStopAtLevel=1' // faster start
 
+    javaArgs += ' -Dswing.metalTheme=steel'
+
     def debugSuspend = (project.findProperty('suspend') as String) ?: 'y'
     if (project.hasProperty('debug')) {
         logger.info('Lauching muCommander in debug mode...')
